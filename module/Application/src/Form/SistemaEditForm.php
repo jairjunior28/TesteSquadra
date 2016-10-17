@@ -26,7 +26,7 @@ class SistemaEditForm extends Form
                 'attributes' => array(
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.descricao',
-                    'required'=> true,
+
                     'maxlength'=> 100,
                 ),
                 'options' => array(
@@ -39,7 +39,7 @@ class SistemaEditForm extends Form
                 'attributes' => array(
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.sigla',
-                    'required'=> true,
+
                     'maxlength'=> 10,
                 ),
                 'options' => array(
@@ -122,7 +122,7 @@ class SistemaEditForm extends Form
                 'attributes' => array(
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.justificativa',
-                    'required'=> true,
+
                     'readonly' => 'true'
 
                 ),
@@ -136,7 +136,8 @@ class SistemaEditForm extends Form
                 'attributes' => array(
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.novajustificativa',
-                    'required'=> true
+                    'required'=> true,
+
                 ),
                 'options' => array(
                     'label' => 'Nova justificativa de alteração'

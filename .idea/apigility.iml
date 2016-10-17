@@ -7,10 +7,10 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$USER_HOME$/apigility/vendor/zfcampus/zf-deploy/zfdeploy.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/zfcampus/zf-deploy/zfdeploy.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$USER_HOME$/apigility/vendor/zfcampus/zf-deploy/zfdeploy.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/zfcampus/zf-deploy/zfdeploy.phar/" />
         </SOURCES>
       </library>
     </orderEntry>

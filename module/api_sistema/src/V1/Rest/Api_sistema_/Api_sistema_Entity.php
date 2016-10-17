@@ -10,7 +10,7 @@ class Api_sistema_Entity
     private $url = '';
     private $justificativa = 'nova inclusão';
     private $usuario = 'jair';
-    private $data = '';
+    private $data = null;
     private $status  = 'ativo';
 
     public function getArrayCopy() {
@@ -20,7 +20,7 @@ class Api_sistema_Entity
             'sigla' => $this->sigla,
             'email' => $this->email,
             'url' => $this->url,
-            'data' => null,
+            'data' => $this->data,
             'justificativa' => $this->justificativa,
              'status' =>  $this->status,
             'usuario'=>'jair'

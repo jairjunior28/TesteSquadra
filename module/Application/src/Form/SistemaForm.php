@@ -27,7 +27,7 @@ class SistemaForm extends Form {
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.descricao',
                     'maxlength'=> 100,
-                    'required'=> true
+                    
                 ),
                 'options' => array(
                     'label' => 'Descrição: *'
@@ -42,7 +42,7 @@ class SistemaForm extends Form {
                     'class' => 'form-control input-sm',
                     'data-ng-model' => 'form.sigla',
                     'maxlength'=> 10,
-                    'required'=> true
+
 
                 ),
                 'options' => array(

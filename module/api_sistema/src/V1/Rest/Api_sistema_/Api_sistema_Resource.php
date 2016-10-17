@@ -28,7 +28,7 @@ class Api_sistema_Resource extends AbstractResourceListener
 
 
     /**
-     * Create a resource
+     * Criação de recurso de inserção de registro.
      *
      * @param  mixed $data
      * @return ApiProblem|mixed
@@ -39,13 +39,14 @@ class Api_sistema_Resource extends AbstractResourceListener
         $data = json_decode(json_encode($data), true);
         $entity->exchangeArray($data);
         $data = $entity->getArrayCopy();
+        
         $this->tableGateway->insert($data);
         $data['id'] = $this->tableGateway->getLastInsertValue();
         return $data;
     }
 
     /**
-     * Delete a resource
+     * Recurso de apagar registro implementado mas não utilizado
      *
      * @param  mixed $id
      * @return ApiProblem|mixed
@@ -62,7 +63,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Delete a collection, or members of a collection
+     * Recurso de apagar multiplos registros não implementado nem utilizado
      *
      * @param  mixed $data
      * @return ApiProblem|mixed
@@ -73,7 +74,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Fetch a resource
+     * Recurso de listagem pelo id usado nas rotas. exemplo:  /sistema/1
      *
      * @param  mixed $id
      * @return ApiProblem|mixed
@@ -93,7 +94,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Fetch all or a subset of resources
+     * Recurso de listagem utilizada na pesquisa
      *
      * @param  array $params
      * @return ApiProblem|mixed
@@ -144,7 +145,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Patch (partial in-place update) a resource
+     * Recurso para atualização de registro via metodo http Patch  
      *
      * @param  mixed $id
      * @param  mixed $data
@@ -164,7 +165,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Patch (partial in-place update) a collection or members of a collection
+     * Recurso para atualização de vários registro via metodo http Patch não implementado nem utilizado
      *
      * @param  mixed $data
      * @return ApiProblem|mixed
@@ -175,7 +176,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Replace a collection or members of a collection
+     * Atualizacao de multiplos registros nao implementado
      *
      * @param  mixed $data
      * @return ApiProblem|mixed
@@ -186,7 +187,7 @@ class Api_sistema_Resource extends AbstractResourceListener
     }
 
     /**
-     * Update a resource
+     * recurso de atualização de registro
      *
      * @param  mixed $id
      * @param  mixed $data
@@ -202,11 +203,12 @@ class Api_sistema_Resource extends AbstractResourceListener
         $data = json_decode(json_encode($data), true);
         $result->exchangeArray($data);
         $data = $result->getArrayCopy();
+        $data['data']=null;
         $this->tableGateway->update($data, array('id' => $id));
         return $data;
     }
     /**
-     * Update a resource
+     * recurso de atualização de registro via metodo http PUT
      *
      * @param  mixed $id
      * @param  mixed $data
