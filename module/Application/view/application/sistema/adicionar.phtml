@@ -1,0 +1,38 @@
+<div ng-controller="SistemaFormController" ng-init="inicializar('<?php echo $id;?>')">
+    <div class="page-header">
+        <a class="btn btn-sm btn-danger pull-right"
+           href="<?php echo $this->url('sistema'); ?>">
+            <span class="glyphicon glyphicon-backward"></span>
+            Voltar
+        </a>
+        <h3>Adicionar Sistema <small>{{form.id == "" ? "Adicionar" : "Editar"}} {{form.descricao}}</small></h3>
+    </div>
+
+    <?php echo str_replace('action=""', '', $this->form()->openTag($form)); ?>
+    <div id = "alert_placeholder"></div>
+    <div class="alert alert-danger"id="emailinvalido" ng-show="cadastrarForm.email.$error.pattern" >
+        <a class="close" data-dismiss="alert">×</a><span>
+                E-mail inválido.
+    </div>
+    <?php foreach ($form->getElements() as $element): ?>
+        <?php if ($element->getAttribute('type') == 'hidden'): ?>
+            <?php echo $this->formRow($element); ?>
+        <?php else: ?>
+            <div class='form-group'>
+                <label class="col-sm-2 control-label" for="<?php echo $element->getAttribute('id'); ?>">
+                    <?php echo $element->getOption('label'); ?>
+                </label>
+                <div class="col-sm-10">
+                    <?php echo $this->formElement($element); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    <div class='form-group'>
+        <button type="submit" class='btn btn-success btn-sm' ng-disabled="cadastrarForm.$invalid" ng-click="salvar()">
+            <span class="glyphicon glyphicon-check"></span>
+            Salvar
+        </button>
+    </div>
+    <?php echo $this->form()->closeTag($form); ?>
+</div>
